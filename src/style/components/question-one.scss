@@ -1,0 +1,175 @@
+@import '../all.scss';
+
+.question-one {
+  width: 100%;
+  height: 100%;
+  background-color: $color-blue;
+  display: flex;
+  .left {
+    width: 58.59375%;
+    height: 100%;
+    .content {
+      position: absolute;
+      right: px-to-vw(100px, 900px);
+      width: 100%;
+      max-width: 600px;
+      padding: 85px 0px 0px 220px;
+      
+    }
+    .title {
+      color: $color-pink;
+      margin-bottom: 16px;
+    }
+    .sub-title {
+      color: white;
+      margin-bottom: 16px;
+    }
+    .description{
+      font-size: 24px;
+      line-height: 36px;
+      color: $color-dark-blue;
+      margin-bottom: 40px;
+    }
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      button {
+        border: none;
+        outline: none;
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 30.5px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 36px;
+        color: white;
+        padding: 10px;
+        margin-bottom: 16px;
+        cursor: pointer;
+        transition: .3s;
+        &:hover {
+          color: $color-blue;
+          background-color: white;
+        }
+      }
+    }
+  }
+  .right {
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: $color-dark-blue;
+    overflow: hidden;
+    animation: add-width .8s 1s ease-in-out forwards;
+    &.outAnimation {
+      animation: outAnimation 1s -0.05s ease-in-out forwards;
+    }
+    .block {
+      width: 100%;
+      height: 100%;
+    }
+    .square, .triangle, .circle {
+      position: absolute;
+    }
+    .square {
+      top: 100%;
+      left: 65px;
+      width: 180px;
+      height: 180px;
+      background-color: $color-pink;
+      animation: buttom-In-square 1.5s 2s cubic-bezier(0.4, 0, 0.2, 1) forwards, rotate 4s 4s forwards;
+    }
+    .triangle {
+      top: 100%;
+      left: 300px;
+      width: 150px;
+      height: 150px;
+      animation: buttom-In-traingle 1.5s 2s cubic-bezier(0.4, 0, 0.2, 1) forwards, rotate 4s 4s reverse forwards;
+      &:before {
+        width: 0px;
+        height: 0px;
+        content: '';
+        border-style: solid;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 0 75px 129.9px 75px;
+        border-color: transparent transparent white transparent;
+      }
+    }
+    .circle {
+      top: 100%;
+      left: 82px;
+      width: 400px;
+      height: 400px;
+      background-color: black;
+      border-radius: 50%;
+      animation: buttom-In-circle 1.5s 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards, move 4s 4s forwards;
+    }
+    @keyframes add-width {
+      from {
+        width: 0;
+      }
+      to {
+        width: calc(100% - 58.59375%);
+      }
+    }
+    @keyframes buttom-In-square {
+      from {
+        top: 100%;
+      }
+      to {
+        top: 108px;
+      }
+    }
+    @keyframes buttom-In-traingle {
+      from {
+        top: 100%;
+      }
+      to {
+        top: 320px;
+      }
+    }
+    @keyframes buttom-In-circle {
+      from {
+        top: 100%;
+      }
+      to {
+        top: 504px;
+      }
+    }
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes move {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(-20px, -20px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+    @keyframes outAnimation {
+      from {
+        width: calc(100% - 58.59375%);
+      }
+      to {
+        width: 100%;
+      }
+    }
+  }
+  
+}
+

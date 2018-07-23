@@ -7,7 +7,7 @@
         <div class="circle"></div>
       </div>
     </div>
-    <div class="right fadeIn" >
+    <div class="right" >
       <div class="content" :style="{display: selected === 0 ? '' : 'none'}">
         <div class="title">Q2</div>
         <div class="sub-title">Imagine you’re almost late, but totally lost at a forked road. Which way do you prefer to go?</div>

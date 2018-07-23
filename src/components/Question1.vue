@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="right" :class="selected === 0 ? '' : 'outAnimation'">
+    <div class="right">
       <div class="block" :style="{display: selected === 0 ? '' : 'none'}">
         <div class="square"></div>
         <div class="triangle"></div>

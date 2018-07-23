@@ -1,33 +1,35 @@
 @import '../all.scss';
 
-.question-one {
+.question-three {
   width: 100%;
   height: 100%;
-  background-color: $color-blue;
+  background-color: $color-dark-blue;
   display: flex;
   .left {
-    width: 58.59375%;
+    width: calc(100% - 58.59375%);
     height: 100%;
+    background-color: $color-pink;
+    animation: slideIn 2s ease-in-out forwards;
     .content {
       position: absolute;
       right: px-to-vw(100px, 900px);
       width: 100%;
       max-width: 600px;
       padding: 85px 0px 0px 220px;
-      
+      animation: fadeIn 2s;
     }
     .title {
-      color: $color-pink;
+      color: white;
       margin-bottom: 16px;
     }
     .sub-title {
-      color: white;
+      color: black;
       margin-bottom: 16px;
     }
     .description{
       font-size: 24px;
       line-height: 36px;
-      color: $color-dark-blue;
+      color: black;
       margin-bottom: 40px;
     }
     .button-group {
@@ -56,13 +58,35 @@
         }
       }
     }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      80% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes slideIn {
+      0% {
+        width: calc(100% - 58.59375%);
+      }
+      50% {
+        width: 100%;
+      }
+      100% {
+        width: 58.59375%;
+      }
+    }
   }
   .right {
     position: absolute;
     right: 0;
     width: 0;
     height: 100%;
-    background-color: $color-dark-blue;
+    background-color: $color-blue;
     overflow: hidden;
     animation: add-width .8s 1s ease-in-out forwards;
     .block {
@@ -78,14 +102,12 @@
       width: 180px;
       height: 180px;
       background-color: $color-pink;
-      animation: buttom-In-square 1.5s 2s cubic-bezier(0.4, 0, 0.2, 1) forwards, rotate 4s 4s forwards;
     }
     .triangle {
       top: 100%;
       left: 300px;
       width: 150px;
       height: 150px;
-      animation: buttom-In-traingle 1.5s 2s cubic-bezier(0.4, 0, 0.2, 1) forwards, rotate 4s 4s reverse forwards;
       &:before {
         width: 0px;
         height: 0px;
@@ -105,7 +127,6 @@
       height: 400px;
       background-color: black;
       border-radius: 50%;
-      animation: buttom-In-circle 1.5s 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards, move 4s 4s forwards;
     }
     @keyframes add-width {
       from {
@@ -159,5 +180,6 @@
       }
     }
   }
+  
 }
 

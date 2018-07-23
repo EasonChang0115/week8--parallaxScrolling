@@ -10,6 +10,7 @@
 import HomePage from './HomePage';
 import Question1 from './Question1';
 import Question2 from './Question2';
+import Question3 from './Question3';
 
 export default {
   name: 'Main',
@@ -19,22 +20,24 @@ export default {
       stepMap: {
         1: 'HomePage',
         2: 'Question1',
-        3: 'Question2'
+        3: 'Question2',
+        4: 'Question3'
       },
-      nowStep: 1,
+      nowStep: 3,
       question: 0,
       selectedArray: ['', '', '']
     };
   },
   mounted() {
-    setTimeout(() => {
-      this.nowStep = 2;
-    }, 8000);
+    // setTimeout(() => {
+    //   this.nowStep = 2;
+    // }, 8000);
   },
   components: {
     HomePage,
     Question1,
-    Question2
+    Question2,
+    Question3
   },
   methods: {
     myChose(data) {

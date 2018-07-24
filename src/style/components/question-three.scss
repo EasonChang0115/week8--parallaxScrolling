@@ -97,17 +97,21 @@
       position: absolute;
     }
     .square {
-      top: 100%;
+      top: 101%;
       left: 65px;
-      width: 180px;
-      height: 180px;
-      background-color: $color-pink;
+      width: 330px;
+      height: 330px;
+      background-color: $color-dark-blue;
+      transform: rotate(3deg);
+      animation: buttom-In-square 1.5s 2.1s cubic-bezier(0.4, 0, 0.2, 1) forwards, rotate-s 4s 4.1s ease-in-out forwards;;
     }
     .triangle {
       top: 100%;
-      left: 300px;
-      width: 150px;
-      height: 150px;
+      left: 170px;
+      width: 250px;
+      height: 250px;
+      transform: rotate(-25deg);
+      animation: buttom-In-traingle 1.5s 2.6s cubic-bezier(0.4, 0, 0.2, 1) forwards, rotate-t 4s 4.1s ease-in-out forwards;
       &:before {
         width: 0px;
         height: 0px;
@@ -116,17 +120,18 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        border-width: 0 75px 129.9px 75px;
-        border-color: transparent transparent white transparent;
+        border-width: 0 125px 216.5px 125px;
+        border-color: transparent transparent black transparent;
       }
     }
     .circle {
       top: 100%;
-      left: 82px;
-      width: 400px;
-      height: 400px;
-      background-color: black;
+      left: 180px;
+      width: 380px;
+      height: 380px;
+      background-color: white;
       border-radius: 50%;
+      animation: buttom-In-circle 1.5s 2.1s cubic-bezier(0.4, 0, 0.2, 1) forwards, move 4s 4.1s ease-in-out forwards;;
     }
     @keyframes add-width {
       from {
@@ -141,7 +146,7 @@
         top: 100%;
       }
       to {
-        top: 108px;
+        top: 111px;
       }
     }
     @keyframes buttom-In-traingle {
@@ -149,7 +154,7 @@
         top: 100%;
       }
       to {
-        top: 320px;
+        top: 466px;
       }
     }
     @keyframes buttom-In-circle {
@@ -157,15 +162,23 @@
         top: 100%;
       }
       to {
-        top: 504px;
+        top: -80px;
       }
     }
-    @keyframes rotate {
+    @keyframes rotate-s {
       from {
-        transform: rotate(0deg);
+        transform: rotate(3deg);
       }
       to {
-        transform: rotate(360deg);
+        transform: rotate(-15deg);
+      }
+    }
+    @keyframes rotate-t {
+      from {
+        transform: rotate(-25deg);
+      }
+      to {
+        transform: rotate(335deg);
       }
     }
     @keyframes move {
@@ -173,13 +186,12 @@
         transform: translate(0, 0);
       }
       50% {
-        transform: translate(-20px, -20px);
+        transform: translate(-15px, 15px);
       }
       100% {
-        transform: translate(0, 0);
+        transform: translate(-25px, 0px);
       }
     }
   }
-  
 }
 

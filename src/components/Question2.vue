@@ -1,6 +1,6 @@
 <template>
   <div class="question-two">
-    <div class="left" :class="selected === 0 ? '' : 'outAnimation'">
+    <div class="left">
       <div class="block" :style="{display: selected === 0 ? '' : 'none'}">
         <div class="square"></div>
         <div class="triangle"></div>
